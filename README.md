@@ -30,8 +30,6 @@ Each shortened URL is stored as an empty S3 object with the `Website-Redirect-Lo
 - [NPM Scripts](#npm-scripts)
 - [Serverless Plugins](#serverless-plugins)
 - [Libraries Used](#libraries-used)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
 
 ---
 
@@ -366,47 +364,4 @@ The project supports deploying to multiple stages (e.g. staging, production). Ea
 | [nanoid](https://github.com/ai/nanoid) | Generates compact, URL-friendly, random unique IDs for short codes. |
 | [nanoid-good](https://github.com/y-gagar1n/nanoid-good) | Wraps nanoid with a profanity filter to avoid generating offensive short codes. |
 | [AWS SDK](https://aws.amazon.com/sdk-for-javascript/) | Interacts with AWS S3 from within the Lambda function. |
-
----
-
-## Troubleshooting
-
-### Common Issues
-
-**`BUCKET` variable not set / S3 access denied**
-- Make sure your `.env.{stage}` file exists and contains all required variables.
-- Verify your AWS credentials have `s3:PutObject` permission on the target bucket.
-
-**CloudFront returns 403 Forbidden**
-- The S3 bucket policy may not be set up correctly. Check `resources/s3-policies.yml`.
-- Ensure the bucket has `PublicRead` access control enabled.
-
-**Custom domain not resolving**
-- Verify the Route 53 hosted zone IDs are correct in your environment file.
-- Ensure DNS propagation has completed (can take up to 48 hours for new domains).
-- Check that the ACM certificate is **validated** (not pending).
-
-**API Gateway returns 500 Internal Server Error**
-- Check CloudWatch Logs for the Lambda function in your deployment region.
-- Ensure the `BUCKET` and `REGION` environment variables are correctly set in `serverless.yml`.
-
-**Website shows `INSERT_TITLE` or similar placeholders**
-- The build step may have failed. Run `npm run build` manually and check for errors.
-- Ensure the `API_URL` environment variable is set before building.
-
-### Useful Commands
-
-```bash
-# View Lambda logs
-sls logs -f store -s staging --tail
-
-# Invoke the function locally
-sls invoke local -f store -p api/events/store.json -s staging
-
-# Remove the entire stack
-STAGE=staging npm run deploy -- --remove
-```
-
----
-
 
