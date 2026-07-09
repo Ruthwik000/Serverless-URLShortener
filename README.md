@@ -409,8 +409,4 @@ STAGE=staging npm run deploy -- --remove
 
 ---
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
-
-Copyright © 2017 Daniel Ireson
