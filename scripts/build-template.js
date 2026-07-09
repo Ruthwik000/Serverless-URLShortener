@@ -17,9 +17,9 @@ try {
       .replace(/INSERT_TITLE/g, TITLE || 'serverless url shortener')
       .replace(
         /INSERT_CREDIT_URL/g,
-        CREDIT_URL || 'https://github.com/danielireson/serverless-url-shortener'
+        CREDIT_URL || 'https://github.com/Ruthwik000/Serverless-URLShortener'
       )
-      .replace(/INSERT_CREDIT/g, CREDIT || 'View this project on Github')
+      .replace(/INSERT_CREDIT/g, CREDIT || 'Serverless URL Shortener')
   )
 
   console.log('Template build success')

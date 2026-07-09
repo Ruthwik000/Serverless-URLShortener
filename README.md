@@ -119,7 +119,7 @@ Before you begin, make sure you have the following installed and configured:
 
 ```bash
 # Clone the repository
-git clone https://github.com/danielireson/serverless-url-shortener.git
+git clone https://github.com/Ruthwik000/Serverless-URLShortener.git
 cd serverless-url-shortener
 
 # Install Node.js dependencies
@@ -298,8 +298,8 @@ Creates a new shortened URL.
 | `SHORT_HOSTED_ZONE` | Yes | Route 53 hosted zone ID containing the short domain. |
 | `SHORT_DOMAIN_ACM_ARN` | Yes | Full ARN of the ACM certificate for the short domain. Must be in `us-east-1`. |
 | `TITLE` | No | Custom title displayed on the website and in the browser tab. Defaults to `serverless url shortener`. |
-| `CREDIT` | No | Custom text for the footer credit link. Defaults to `View this project on Github`. |
-| `CREDIT_URL` | No | URL that the footer credit link points to. Defaults to the GitHub repository. |
+| `CREDIT` | No | Custom text for the footer credit link. Defaults to `Serverless URL Shortener`. |
+| `CREDIT_URL` | No | URL that the footer credit link points to. Defaults to `https://github.com/Ruthwik000/Serverless-URLShortener`. |
 | `AWS_PROFILE` | No | Named AWS CLI profile from `~/.aws/credentials`. Useful if you have multiple AWS accounts. |
 
 ---

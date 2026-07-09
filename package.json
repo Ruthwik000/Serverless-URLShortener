@@ -1,7 +1,7 @@
 {
   "name": "serverless-url-shortener",
   "version": "1.0.0",
-  "author": "Daniel Ireson",
+  "author": "Ruthwik",
   "license": "MIT",
   "scripts": {
     "build": "rm -rf ./build/ && mkdir -p ./build/ && cp -R ./public/ ./build/ && node scripts/build-template.js",
